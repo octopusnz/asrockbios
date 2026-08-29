@@ -11,6 +11,10 @@ These files are provided **"AS IS", with no warranty of any kind, express or imp
 - Always flash using ASRock's own tools (Instant Flash from within BIOS, or AsrockAPP on Windows) and keep the CMOS battery / clear-CMOS jumper in mind in case you need to recover.
 - A **higher BIOS version number does not guarantee a newer ME firmware or microcode** — see the note under the table below.
 
+## Important things to know
+
+- **SATA drives can disappear after flashing one of the newer BIOS versions.** Some of the newer BIOS versions in this repo change the shared M.2/SATA storage lane configuration to default to **M.2** instead of **Auto**, which disables the SATA controller/ports in the process. If your SATA drives (including a SATA boot drive) go missing from BIOS/Windows after updating, go into BIOS setup → Storage Configuration and manually set the mode back to `Auto` (or `SATA`, if you don't have an M.2 drive installed) to restore SATA drive detection. This isn't currently pinned to a specific version — if you can identify exactly which release(s) changed this default, please open an issue or PR so this note can be made more precise.
+
 ## Compatibility
 
 | | |
