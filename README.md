@@ -26,8 +26,6 @@ These files are provided **"AS IS", with no warranty of any kind, express or imp
 
 ## Releases
 
-This is the complete official version history for this board: everything currently listed on [ASRock's Z390 Taichi download page](https://www.asrock.com/mb/Intel/Z390%20Taichi/index.asp#BIOS) (`ROM` variants only — for flashing via Instant Flash/AsrockAPP), plus `4.30I`, `4.34D`–`4.34H`, `4.34K`, `4.34L`, and `4.35`, which were supplied directly by ASRock support rather than posted publicly. Intel ME and CPU microcode versions were extracted directly from each file with [ME Analyzer](https://github.com/platomav/MEAnalyzer) and [MC Extractor](https://github.com/platomav/MCExtractor) — see below for how to reproduce this yourself. Newest first:
-
 | BIOS file | Released | Intel ME (CSME) | ME build date | `906EA` | `906EB` | `906EC` | `906ED` |
 |---|---|---|---|---|---|---|---|
 | [Z39TC4.35.zip](Z39TC4.35.zip) | via ASRock support † | `12.0.72.1757` | 2021-01-17 | F8 (2024-02-01) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
