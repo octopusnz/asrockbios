@@ -15,6 +15,15 @@ These files are provided **"AS IS", with no warranty of any kind, express or imp
 
 - **SATA drives might not be automatically detected after flashing one of the newer BIOS versions.** Some of the newer BIOS versions in this repo change the shared M.2/SATA storage lane configuration to default to **M.2** instead of **Auto**, which disables the SATA controller/ports in the process. If your SATA drives (including a SATA boot drive) go missing from BIOS/Windows after updating, go into BIOS setup → Storage Configuration and manually set the mode back to `Auto` (or `SATA`, if you don't have an M.2 drive installed) to restore SATA drive detection.
 
+## Backup BIOS (dual BIOS chips)
+
+This board has two physical BIOS chips as a safety net, per the official manual (`Manual/Z390 Taichi.pdf`, pages 90–91):
+
+- **`BIOS_A`** (main/active) and **`BIOS_B`** (backup). The board normally boots from `BIOS_A`; onboard LEDs `BIOS_A_LED1` / `BIOS_B_LED1` show which chip is currently active.
+- **Automatic failover:** if the active chip's BIOS is corrupted or repeatedly fails to boot, the board automatically switches over and boots from the backup chip instead — no user action needed. Whether this failover behavior itself is enabled is controlled by **Advanced → Chipset Configuration → BIOS Backup Switch** in UEFI setup.
+- **You can't flash the backup chip directly** with a chosen file (e.g. via Instant Flash) — ASRock blocks that for safety. The only sanctioned way to write to it is **Tools → Secure Backup UEFI** in UEFI setup, which duplicates whichever BIOS you're *currently running from* onto the *other* chip. It mirrors your current active image — it doesn't let you pick a specific file/version to put on the backup chip.
+- **Recommended use:** after flashing a new BIOS from this repo and confirming it boots and runs fine, go into UEFI setup (`Del`/`F2` at boot) → **Tools** → **Secure Backup UEFI**, and run it once to sync that known-good BIOS onto the backup chip too — this keeps both chips consistent and ready for the automatic failover above.
+
 ## Compatibility
 
 | | |
