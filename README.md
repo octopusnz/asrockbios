@@ -22,9 +22,7 @@ This board has two physical BIOS chips as a safety net, (see [`Z390_Taichi_Manua
 - **`BIOS_A`** (main/active) and **`BIOS_B`** (backup). The board normally boots from `BIOS_A`; onboard LEDs `BIOS_A_LED1` / `BIOS_B_LED1` show which chip is currently active.
 - **Automatic failover:** if the active chip's BIOS is corrupted or repeatedly fails to boot, the board automatically switches over and boots from the backup chip instead — no user action needed. Whether this failover behavior itself is enabled is controlled by **Advanced → Chipset Configuration → BIOS Backup Switch** in UEFI setup.
 - **You can't flash the backup chip directly** with a chosen file (e.g. via Instant Flash) — ASRock blocks that for safety. The only sanctioned way to write to it is **Tools → Secure Backup UEFI** in UEFI setup, which duplicates whichever BIOS you're *currently running from* onto the *other* chip. It mirrors your current active image — it doesn't let you pick a specific file/version to put on the backup chip.
-- **Use this before flashing a new BIOS** since Secure Backup UEFI only ever copies your *currently running* BIOS, run it **before** you flash anything new — while your current, working BIOS is still active — so your known-good version gets preserved on the backup chip first. Then flash the new version onto the active chip as normal. If the new BIOS fails to boot, automatic failover falls back to the backup chip running your old, known-good version instead of a strange/half-flashed state, giving you a real recovery path. Concretely:
-  1. **Before flashing:** enter UEFI setup (`Del`/`F2` at boot) → **Tools** → **Secure Backup UEFI** → run it once, while your current BIOS is still active, to copy it onto the backup chip.
-  2. **Then flash** the new BIOS.
+- **Use this before flashing a new BIOS** since Secure Backup UEFI only ever copies your *currently running* BIOS, run it **before** you flash anything new — while your current, working BIOS is still active — so your known-good version gets preserved on the backup chip first. Enter UEFI setup (`Del`/`F2` at boot) → **Tools** → **Secure Backup UEFI**
 
 ## Compatibility
 
