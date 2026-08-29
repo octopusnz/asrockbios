@@ -1,4 +1,4 @@
-# ASRock Z390 Taichi BIOS Mirror
+# ASRock Z390 Taichi BIOS Repository
 
 A repo of ASRock UEFI/BIOS updates for the **ASRock Z390 Taichi** (LGA1151, Z390/Cannon Point-H chipset).
 
