@@ -22,15 +22,29 @@ These files are provided **"AS IS", with no warranty of any kind, express or imp
 
 ## Releases
 
-| BIOS file | Intel ME (CSME) version | ME firmware build date | CPU microcode versions bundled (by CPUID) |
-|---|---|---|---|
-| [Z39TC4.34K.zip](Z39TC4.34K.zip) | `12.0.97.2608` | 2025-02-19 | `906EA`→FA (2024-07-28) · `906EB`→F6 (2024-02-01) · `906EC`→F8 (2024-02-01) · `906ED`→104 (2024-11-14) |
-| [Z39TC4.34L.zip](Z39TC4.34L.zip) | `12.1.1.1022` | 2025-07-16 | `906EA`→FA (2024-07-28) · `906EB`→F6 (2024-02-01) · `906EC`→F8 (2024-02-01) · `906ED`→104 (2024-11-14) |
-| [Z39TC4.35.zip](Z39TC4.35.zip)  | `12.0.72.1757` | 2021-01-17 | `906EA`→F8 (2024-02-01) · `906EB`→F6 (2024-02-01) · `906EC`→F8 (2024-02-01) · `906ED`→104 (2024-11-14) |
+This is the complete official version history for this board, as listed on [ASRock's Z390 Taichi download page](https://www.asrock.com/mb/Intel/Z390%20Taichi/index.asp#BIOS) (`ROM` variants only — for flashing via Instant Flash/AsrockAPP), plus the `4.34K`/`4.34L`/`4.35` builds already in this repo, which are no longer listed on ASRock's current page. Intel ME and CPU microcode versions were extracted directly from each file with [ME Analyzer](https://github.com/platomav/MEAnalyzer) and [MC Extractor](https://github.com/platomav/MCExtractor) — see below for how to reproduce this yourself. Newest first:
 
-`906EA`/`906EB`/`906EC`/`906ED` are the Intel CPUID signatures covered by this board's 8th/9th Gen Coffee Lake support (stepping A/B/C/D respectively). These values were extracted directly from each BIOS file with [MC Extractor](https://github.com/platomav/MCExtractor); ME versions were extracted with [ME Analyzer](https://github.com/platomav/MEAnalyzer) — see below for how to reproduce this yourself.
+| BIOS file | Released | Intel ME (CSME) | ME build date | `906EA` | `906EB` | `906EC` | `906ED` |
+|---|---|---|---|---|---|---|---|
+| [Z39TC4.35.zip](Z39TC4.35.zip) | *unlisted* | `12.0.72.1757` | 2021-01-17 | F8 (2024-02-01) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
+| [Z39TC4.34L.zip](Z39TC4.34L.zip) | *unlisted* | `12.1.1.1022` | 2025-07-16 | FA (2024-07-28) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
+| [Z39TC4.34K.zip](Z39TC4.34K.zip) | *unlisted* | `12.0.97.2608` | 2025-02-19 | FA (2024-07-28) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
+| [Z39TC4.34I.zip](Z39TC4.34I.zip) | 2024-11-07 (Beta) | `12.0.96.2562` | 2024-08-25 | F8 (2024-02-01) | F6 (2024-02-01) | F8 (2024-02-01) | 100 (2024-02-05) |
+| [Z39TC4.30.zip](Z39TC4.30.zip) | 2020-01-02 | `12.0.49.1534` | 2019-11-06 | CA (2019-10-03) | CA (2019-10-03) | CA (2019-10-03) | CA (2019-10-03) |
+| [Z39TC4.20.zip](Z39TC4.20.zip) | 2019-09-02 | `12.0.31.1416` | 2019-02-18 | B4 (2019-04-01) | B4 (2019-04-01) | AE (2019-02-14) | B4 (2019-02-28) |
+| [Z39TC4.21.zip](Z39TC4.21.zip) | 2019-08-22 (Beta) | `12.0.31.1416` | 2019-02-18 | B4 (2019-04-01) | B4 (2019-04-01) | AE (2019-02-14) | B4 (2019-02-28) |
+| [Z39TC4.10.zip](Z39TC4.10.zip) | 2019-05-15 | `12.0.31.1416` | 2019-02-18 | B4 (2019-04-01) | B4 (2019-04-01) | AE (2019-02-14) | B4 (2019-02-28) |
+| [Z39TC4.00.zip](Z39TC4.00.zip) | 2019-03-20 | `12.0.8.1123` | 2018-08-22 | AA (2018-12-12) | AA (2018-12-12) | A2 (2018-09-29) | B0 (2019-02-04) |
+| [Z39TC2.00.zip](Z39TC2.00.zip) | 2019-03-15 | `12.0.8.1123` | 2018-08-22 | AA (2018-12-12) | AA (2018-12-12) | A2 (2018-09-29) | — |
+| [Z39TC1.90.zip](Z39TC1.90.zip) | 2019-01-16 | `12.0.8.1123` | 2018-08-22 | 9A (2018-07-16) | 9A (2018-07-16) | A0 (2018-09-17) | — |
+| [Z39TC1.80.zip](Z39TC1.80.zip) | 2018-12-13 | `12.0.8.1123` | 2018-08-22 | 9A (2018-07-16) | 9A (2018-07-16) | A0 (2018-09-17) | — |
+| [Z39TC1.60.zip](Z39TC1.60.zip) | 2018-11-21 | `12.0.8.1123` | 2018-08-22 | 9A (2018-07-16) | 9A (2018-07-16) | A0 (2018-09-17) | — |
+| [Z39TC1.30.zip](Z39TC1.30.zip) | 2018-10-29 | `12.0.6.1120` | 2018-07-11 | 96 (2018-05-02) | 8E (2018-03-24) | 98 (2018-05-31) | — |
+| [Z39TC1.20.zip](Z39TC1.20.zip) | 2018-10-29 | `12.0.6.1120` | 2018-07-11 | 96 (2018-05-02) | 8E (2018-03-24) | 98 (2018-05-31) | — |
 
-> **Note:** `Z39TC4.35` ships an *older* Intel ME package (`12.0.72.1757`, built 2021-01-17) and an older `906EA` microcode (`F8` vs `FA` in `34L`) than `Z39TC4.34L`. BIOS version numbers on this board don't increase monotonically for ME/microcode, so don't assume the latest-numbered BIOS has the newest ME or microcode — check this table, or re-run the tools below, before deciding which file to flash.
+Each `906Ex` column is an Intel CPUID signature this board supports (all four are Coffee Lake / Coffee Lake Refresh steppings), showing the microcode `Revision (date)` bundled for it — `—` means that BIOS predates support for that stepping (9th Gen/`906ED` support was added in `4.00`). "Released" dates and Beta labels are as shown on ASRock's page; "*unlisted*" means the file isn't (or is no longer) on ASRock's current download page.
+
+> **Note:** `Z39TC4.35` ships an *older* Intel ME package (`12.0.72.1757`, built 2021-01-17) and an older `906EA` microcode (`F8` vs `FA`) than `Z39TC4.34L` before it. BIOS version numbers on this board don't increase monotonically for ME/microcode, so don't assume the latest-numbered BIOS has the newest ME or microcode — check this table, or re-run the tools below yourself, before deciding which file to flash.
 
 ## How to check the Intel ME version yourself
 
