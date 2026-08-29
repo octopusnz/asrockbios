@@ -58,7 +58,7 @@ Each `906Ex` column is an Intel CPUID signature this board supports (all four ar
 
 ## How to check the Intel ME version yourself
 
-You can check either (a) which ME version a *downloaded BIOS file* contains before flashing, or (b) which ME version is *currently running* on your board.
+You can check either (a) which ME version a *downloaded BIOS file* contains before flashing, or which ME version is *currently running* on your board, on (b) Windows or (c) Linux.
 
 ### (a) Check the ME version bundled in a BIOS file — using ME Analyzer
 
@@ -89,6 +89,18 @@ You can check either (a) which ME version a *downloaded BIOS file* contains befo
 Alternative / cross-check: dump your current SPI flash with Intel FPT (`FPTW64 -d spi.bin`) and run that dump through ME Analyzer exactly as in (a) above — this is the most authoritative method since it reads the raw firmware image directly.
 
 Device Manager → System devices → **Intel(R) Management Engine Interface** → Driver tab shows the *MEI driver* version, not the firmware version — don't rely on it to confirm your ME firmware version.
+
+### (c) Check the ME version currently running on your system (Linux)
+
+No extra tools needed — the in-kernel `mei_me` driver (present since kernel 4.18) exposes the live firmware version directly via sysfs:
+
+```bash
+cat /sys/class/mei/mei0/fw_ver
+```
+
+Each line is one firmware component in `<index>:<major>.<minor>.<hotfix>.<build>` format, e.g. `0:12.0.97.2608` — the `major.minor.hotfix.build` part is the ME/CSME version, directly comparable to the `Intel ME (CSME)` column in the table above. If `/sys/class/mei/mei0/` doesn't exist, the `mei_me` kernel module either isn't loaded or your distro's kernel is too old — `sudo modprobe mei_me` first, or check `dmesg | grep -i mei`.
+
+Alternative / cross-check: dump your current SPI flash with [flashrom](https://www.flashrom.org/) (`sudo flashrom -p internal -r spi.bin`) and run that dump through ME Analyzer exactly as in (a) above.
 
 ## How to check the CPU microcode version
 
