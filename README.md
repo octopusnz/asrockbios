@@ -7,7 +7,7 @@ A mirror of ASRock UEFI/BIOS updates for the **ASRock Z390 Taichi** (LGA1151, Z3
 These files are provided **"AS IS", with no warranty of any kind, express or implied**. Use them entirely at your own risk. The maintainer(s) of this repository accept **no responsibility or liability** for any damage, data loss, bricked hardware, instability, security impact, or other issues arising from downloading, flashing, or otherwise using anything in this repository.
 
 - Flashing a BIOS/UEFI is inherently risky. A failed or interrupted flash can brick your motherboard.
-- These files are re-hosted as obtained from ASRock. Most were downloaded directly from ASRock's official [Z390 Taichi download page](https://www.asrock.com/mb/Intel/Z390%20Taichi/index.asp#BIOS) and can be verified by file size/hash against it; `4.34K`, `4.34L`, and `4.35` were instead provided directly by ASRock support and aren't independently verifiable against the public page (see the note in the table below).
+- These files are re-hosted as obtained from ASRock. Most were downloaded directly from ASRock's official [Z390 Taichi download page](https://www.asrock.com/mb/Intel/Z390%20Taichi/index.asp#BIOS) and can be verified by file size/hash against it; `4.30I`, `4.34D`–`4.34H`, `4.34K`, `4.34L`, and `4.35` were instead provided directly by ASRock support and aren't independently verifiable against the public page (see the note in the table below).
 - Always flash using ASRock's own tools (Instant Flash from within BIOS, or AsrockAPP on Windows) and keep the CMOS battery / clear-CMOS jumper in mind in case you need to recover.
 - A **higher BIOS version number does not guarantee a newer ME firmware or microcode** — see the note under the table below.
 
@@ -22,7 +22,7 @@ These files are provided **"AS IS", with no warranty of any kind, express or imp
 
 ## Releases
 
-This is the complete official version history for this board: everything currently listed on [ASRock's Z390 Taichi download page](https://www.asrock.com/mb/Intel/Z390%20Taichi/index.asp#BIOS) (`ROM` variants only — for flashing via Instant Flash/AsrockAPP), plus `4.34K`, `4.34L`, and `4.35`, which were supplied directly by ASRock support rather than posted publicly. Intel ME and CPU microcode versions were extracted directly from each file with [ME Analyzer](https://github.com/platomav/MEAnalyzer) and [MC Extractor](https://github.com/platomav/MCExtractor) — see below for how to reproduce this yourself. Newest first:
+This is the complete official version history for this board: everything currently listed on [ASRock's Z390 Taichi download page](https://www.asrock.com/mb/Intel/Z390%20Taichi/index.asp#BIOS) (`ROM` variants only — for flashing via Instant Flash/AsrockAPP), plus `4.30I`, `4.34D`–`4.34H`, `4.34K`, `4.34L`, and `4.35`, which were supplied directly by ASRock support rather than posted publicly. Intel ME and CPU microcode versions were extracted directly from each file with [ME Analyzer](https://github.com/platomav/MEAnalyzer) and [MC Extractor](https://github.com/platomav/MCExtractor) — see below for how to reproduce this yourself. Newest first:
 
 | BIOS file | Released | Intel ME (CSME) | ME build date | `906EA` | `906EB` | `906EC` | `906ED` |
 |---|---|---|---|---|---|---|---|
@@ -30,6 +30,12 @@ This is the complete official version history for this board: everything current
 | [Z39TC4.34L.zip](Z39TC4.34L.zip) | via ASRock support † | `12.1.1.1022` | 2025-07-16 | FA (2024-07-28) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
 | [Z39TC4.34K.zip](Z39TC4.34K.zip) | via ASRock support † | `12.0.97.2608` | 2025-02-19 | FA (2024-07-28) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
 | [Z39TC4.34I.zip](Z39TC4.34I.zip) | 2024-11-07 (Beta) | `12.0.96.2562` | 2024-08-25 | F8 (2024-02-01) | F6 (2024-02-01) | F8 (2024-02-01) | 100 (2024-02-05) |
+| [Z39TC4.34H.zip](Z39TC4.34H.zip) | via ASRock support † | `12.0.94.2380` | 2023-05-18 | F8 (2024-02-01) | F6 (2024-02-01) | F8 (2024-02-01) | 100 (2024-02-05) |
+| [Z39TC4.34G.zip](Z39TC4.34G.zip) | via ASRock support † | `12.0.94.2380` | 2023-05-18 | F4 (2023-02-23) | F4 (2023-02-23) | F4 (2023-02-23) | FA (2023-02-27) |
+| [Z39TC4.34F.zip](Z39TC4.34F.zip) | via ASRock support † | `12.0.92.2145` | 2022-05-29 | F4 (2023-02-23) | F2 (2022-12-26) | F2 (2023-01-12) | FA (2023-02-27) |
+| [Z39TC4.34E.zip](Z39TC4.34E.zip) | via ASRock support † | `12.0.92.2145` | 2022-05-29 | F4 (2023-02-23) | F2 (2022-12-26) | F2 (2023-01-12) | FA (2023-02-27) |
+| [Z39TC4.34D.zip](Z39TC4.34D.zip) | via ASRock support † | `12.0.72.1757` | 2021-01-17 | DE (2020-05-25) | DE (2020-05-25) | DE (2020-06-03) | DE (2020-05-24) |
+| [Z39TC4.30I.zip](Z39TC4.30I.zip) | via ASRock support † | `12.0.49.1534` | 2019-11-06 | CA (2019-10-03) | CA (2019-10-03) | CA (2019-10-03) | CA (2019-10-03) |
 | [Z39TC4.30.zip](Z39TC4.30.zip) | 2020-01-02 | `12.0.49.1534` | 2019-11-06 | CA (2019-10-03) | CA (2019-10-03) | CA (2019-10-03) | CA (2019-10-03) |
 | [Z39TC4.20.zip](Z39TC4.20.zip) | 2019-09-02 | `12.0.31.1416` | 2019-02-18 | B4 (2019-04-01) | B4 (2019-04-01) | AE (2019-02-14) | B4 (2019-02-28) |
 | [Z39TC4.21.zip](Z39TC4.21.zip) | 2019-08-22 (Beta) | `12.0.31.1416` | 2019-02-18 | B4 (2019-04-01) | B4 (2019-04-01) | AE (2019-02-14) | B4 (2019-02-28) |
@@ -44,9 +50,9 @@ This is the complete official version history for this board: everything current
 
 Each `906Ex` column is an Intel CPUID signature this board supports (all four are Coffee Lake / Coffee Lake Refresh steppings), showing the microcode `Revision (date)` bundled for it — `—` means that BIOS predates support for that stepping (9th Gen/`906ED` support was added in `4.00`). "Released" dates and Beta labels are as shown on ASRock's page.
 
-† `4.34K`, `4.34L`, and `4.35` were **not** downloaded from ASRock's public site — they were provided directly by ASRock support and aren't (or aren't yet) listed on the public download page. Treat their provenance accordingly: they came from ASRock, but not through the same publicly-verifiable channel as the rest of this table.
+† `4.30I`, `4.34D`–`4.34H`, `4.34K`, `4.34L`, and `4.35` were **not** downloaded from ASRock's public site — they were provided directly by ASRock support and aren't (or aren't yet) listed on the public download page. Treat their provenance accordingly: they came from ASRock, but not through the same publicly-verifiable channel as the rest of this table.
 
-> **Note:** `Z39TC4.35` ships an *older* Intel ME package (`12.0.72.1757`, built 2021-01-17) and an older `906EA` microcode (`F8` vs `FA`) than `Z39TC4.34L` before it. BIOS version numbers on this board don't increase monotonically for ME/microcode, so don't assume the latest-numbered BIOS has the newest ME or microcode — check this table, or re-run the tools below yourself, before deciding which file to flash.
+> **Note:** `Z39TC4.35`'s Intel ME package (`12.0.72.1757`, built 2021-01-17) isn't just older than `Z39TC4.34L`'s — it's *byte-identical* to the one in `Z39TC4.34D`, three versions and roughly two years earlier. Its `906EA` microcode was still updated to `F8`, so this wasn't a blanket rollback, but the ME component specifically reverted rather than advanced. BIOS version numbers on this board don't increase monotonically for ME/microcode, so don't assume the latest-numbered BIOS has the newest ME or microcode — check this table, or re-run the tools below yourself, before deciding which file to flash.
 
 ## How to check the Intel ME version yourself
 
