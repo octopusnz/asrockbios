@@ -8,7 +8,7 @@ These files are provided **"AS IS", with no warranty of any kind, express or imp
 
 - Flashing a BIOS/UEFI is inherently risky. A failed or interrupted flash can brick your motherboard.
 - These files are re-hosted as obtained from ASRock. Most were downloaded directly from ASRock's official [Z390 Taichi download page](https://www.asrock.com/mb/Intel/Z390%20Taichi/index.asp#BIOS) and can be verified by file size/hash against it; `4.30I`, `4.34D`–`4.34H`, `4.34K`, `4.34L`, and `4.35` were instead provided directly by ASRock support and aren't independently verifiable against the public page (see the note in the table below).
-- Always flash using ASRock's own tools (Instant Flash from within BIOS, or AsrockAPP on Windows) and keep the CMOS battery / clear-CMOS jumper in mind in case you need to recover.
+- Always flash using ASRock's own tools (Instant Flash from within BIOS, or AsrockAPP on Windows). Clearing CMOS (the `CLRMOS1` jumper, or pulling the battery) only resets BIOS *settings* to default — it does **not** repair a corrupted or failed BIOS flash, so don't rely on it as a recovery method for a bad flash. It's useful for a different, more common problem: if the board won't POST after flashing because old overclock/voltage settings don't agree with the new BIOS, clearing CMOS resets those settings and often fixes that. For actual flash-failure recovery, see [Backup BIOS](#backup-bios-dual-bios-chips) below.
 - A **higher BIOS version number does not guarantee a newer ME firmware or microcode** — see the note under the table below.
 
 ## Important things to know
