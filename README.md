@@ -7,7 +7,7 @@ A mirror of ASRock UEFI/BIOS updates for the **ASRock Z390 Taichi** (LGA1151, Z3
 These files are provided **"AS IS", with no warranty of any kind, express or implied**. Use them entirely at your own risk. The maintainer(s) of this repository accept **no responsibility or liability** for any damage, data loss, bricked hardware, instability, security impact, or other issues arising from downloading, flashing, or otherwise using anything in this repository.
 
 - Flashing a BIOS/UEFI is inherently risky. A failed or interrupted flash can brick your motherboard.
-- These files are re-hosted as downloaded from ASRock. Verify file size/hash against ASRock's official [Z390 Taichi download page](https://www.asrock.com/mb/Intel/Z390%20Taichi/index.asp#BIOS) before flashing if you want an independent check.
+- These files are re-hosted as obtained from ASRock. Most were downloaded directly from ASRock's official [Z390 Taichi download page](https://www.asrock.com/mb/Intel/Z390%20Taichi/index.asp#BIOS) and can be verified by file size/hash against it; `4.34K`, `4.34L`, and `4.35` were instead provided directly by ASRock support and aren't independently verifiable against the public page (see the note in the table below).
 - Always flash using ASRock's own tools (Instant Flash from within BIOS, or AsrockAPP on Windows) and keep the CMOS battery / clear-CMOS jumper in mind in case you need to recover.
 - A **higher BIOS version number does not guarantee a newer ME firmware or microcode** — see the note under the table below.
 
@@ -22,13 +22,13 @@ These files are provided **"AS IS", with no warranty of any kind, express or imp
 
 ## Releases
 
-This is the complete official version history for this board, as listed on [ASRock's Z390 Taichi download page](https://www.asrock.com/mb/Intel/Z390%20Taichi/index.asp#BIOS) (`ROM` variants only — for flashing via Instant Flash/AsrockAPP), plus the `4.34K`/`4.34L`/`4.35` builds already in this repo, which are no longer listed on ASRock's current page. Intel ME and CPU microcode versions were extracted directly from each file with [ME Analyzer](https://github.com/platomav/MEAnalyzer) and [MC Extractor](https://github.com/platomav/MCExtractor) — see below for how to reproduce this yourself. Newest first:
+This is the complete official version history for this board: everything currently listed on [ASRock's Z390 Taichi download page](https://www.asrock.com/mb/Intel/Z390%20Taichi/index.asp#BIOS) (`ROM` variants only — for flashing via Instant Flash/AsrockAPP), plus `4.34K`, `4.34L`, and `4.35`, which were supplied directly by ASRock support rather than posted publicly. Intel ME and CPU microcode versions were extracted directly from each file with [ME Analyzer](https://github.com/platomav/MEAnalyzer) and [MC Extractor](https://github.com/platomav/MCExtractor) — see below for how to reproduce this yourself. Newest first:
 
 | BIOS file | Released | Intel ME (CSME) | ME build date | `906EA` | `906EB` | `906EC` | `906ED` |
 |---|---|---|---|---|---|---|---|
-| [Z39TC4.35.zip](Z39TC4.35.zip) | *unlisted* | `12.0.72.1757` | 2021-01-17 | F8 (2024-02-01) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
-| [Z39TC4.34L.zip](Z39TC4.34L.zip) | *unlisted* | `12.1.1.1022` | 2025-07-16 | FA (2024-07-28) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
-| [Z39TC4.34K.zip](Z39TC4.34K.zip) | *unlisted* | `12.0.97.2608` | 2025-02-19 | FA (2024-07-28) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
+| [Z39TC4.35.zip](Z39TC4.35.zip) | via ASRock support † | `12.0.72.1757` | 2021-01-17 | F8 (2024-02-01) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
+| [Z39TC4.34L.zip](Z39TC4.34L.zip) | via ASRock support † | `12.1.1.1022` | 2025-07-16 | FA (2024-07-28) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
+| [Z39TC4.34K.zip](Z39TC4.34K.zip) | via ASRock support † | `12.0.97.2608` | 2025-02-19 | FA (2024-07-28) | F6 (2024-02-01) | F8 (2024-02-01) | 104 (2024-11-14) |
 | [Z39TC4.34I.zip](Z39TC4.34I.zip) | 2024-11-07 (Beta) | `12.0.96.2562` | 2024-08-25 | F8 (2024-02-01) | F6 (2024-02-01) | F8 (2024-02-01) | 100 (2024-02-05) |
 | [Z39TC4.30.zip](Z39TC4.30.zip) | 2020-01-02 | `12.0.49.1534` | 2019-11-06 | CA (2019-10-03) | CA (2019-10-03) | CA (2019-10-03) | CA (2019-10-03) |
 | [Z39TC4.20.zip](Z39TC4.20.zip) | 2019-09-02 | `12.0.31.1416` | 2019-02-18 | B4 (2019-04-01) | B4 (2019-04-01) | AE (2019-02-14) | B4 (2019-02-28) |
@@ -42,7 +42,9 @@ This is the complete official version history for this board, as listed on [ASRo
 | [Z39TC1.30.zip](Z39TC1.30.zip) | 2018-10-29 | `12.0.6.1120` | 2018-07-11 | 96 (2018-05-02) | 8E (2018-03-24) | 98 (2018-05-31) | — |
 | [Z39TC1.20.zip](Z39TC1.20.zip) | 2018-10-29 | `12.0.6.1120` | 2018-07-11 | 96 (2018-05-02) | 8E (2018-03-24) | 98 (2018-05-31) | — |
 
-Each `906Ex` column is an Intel CPUID signature this board supports (all four are Coffee Lake / Coffee Lake Refresh steppings), showing the microcode `Revision (date)` bundled for it — `—` means that BIOS predates support for that stepping (9th Gen/`906ED` support was added in `4.00`). "Released" dates and Beta labels are as shown on ASRock's page; "*unlisted*" means the file isn't (or is no longer) on ASRock's current download page.
+Each `906Ex` column is an Intel CPUID signature this board supports (all four are Coffee Lake / Coffee Lake Refresh steppings), showing the microcode `Revision (date)` bundled for it — `—` means that BIOS predates support for that stepping (9th Gen/`906ED` support was added in `4.00`). "Released" dates and Beta labels are as shown on ASRock's page.
+
+† `4.34K`, `4.34L`, and `4.35` were **not** downloaded from ASRock's public site — they were provided directly by ASRock support and aren't (or aren't yet) listed on the public download page. Treat their provenance accordingly: they came from ASRock, but not through the same publicly-verifiable channel as the rest of this table.
 
 > **Note:** `Z39TC4.35` ships an *older* Intel ME package (`12.0.72.1757`, built 2021-01-17) and an older `906EA` microcode (`F8` vs `FA`) than `Z39TC4.34L` before it. BIOS version numbers on this board don't increase monotonically for ME/microcode, so don't assume the latest-numbered BIOS has the newest ME or microcode — check this table, or re-run the tools below yourself, before deciding which file to flash.
 
