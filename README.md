@@ -1,8 +1,8 @@
 # ASRock Z390 Taichi BIOS Mirror
 
-A mirror of ASRock UEFI/BIOS updates for the **ASRock Z390 Taichi** (LGA1151, Z390/Cannon Point-H chipset), kept here alongside the Intel Management Engine (ME) and CPU microcode versions each release actually ships — information ASRock's own changelog doesn't list.
+A repo of ASRock UEFI/BIOS updates for the **ASRock Z390 Taichi** (LGA1151, Z390/Cannon Point-H chipset).
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 These files are provided **"AS IS", with no warranty of any kind, express or implied**. Use them entirely at your own risk. The maintainer(s) of this repository accept **no responsibility or liability** for any damage, data loss, bricked hardware, instability, security impact, or other issues arising from downloading, flashing, or otherwise using anything in this repository.
 
@@ -13,7 +13,7 @@ These files are provided **"AS IS", with no warranty of any kind, express or imp
 
 ## Important things to know
 
-- **SATA drives can disappear after flashing one of the newer BIOS versions.** Some of the newer BIOS versions in this repo change the shared M.2/SATA storage lane configuration to default to **M.2** instead of **Auto**, which disables the SATA controller/ports in the process. If your SATA drives (including a SATA boot drive) go missing from BIOS/Windows after updating, go into BIOS setup → Storage Configuration and manually set the mode back to `Auto` (or `SATA`, if you don't have an M.2 drive installed) to restore SATA drive detection. This isn't currently pinned to a specific version — if you can identify exactly which release(s) changed this default, please open an issue or PR so this note can be made more precise.
+- **SATA drives might not be automatically detected after flashing one of the newer BIOS versions.** Some of the newer BIOS versions in this repo change the shared M.2/SATA storage lane configuration to default to **M.2** instead of **Auto**, which disables the SATA controller/ports in the process. If your SATA drives (including a SATA boot drive) go missing from BIOS/Windows after updating, go into BIOS setup → Storage Configuration and manually set the mode back to `Auto` (or `SATA`, if you don't have an M.2 drive installed) to restore SATA drive detection.
 
 ## Compatibility
 
